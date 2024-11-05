@@ -1,5 +1,5 @@
 const {express,secret,ceklogin,HarusLogin,path,app,fs} = require('./setting/modul');
-const {error404,error500}  = require('./page/error');
+const {error404,error403,error500}  = require('./page/error');
 const db = require('./setting/db');
 const {awal,tes,logout,lobby,pdaftar,plogin,daftar} = require('./page/pengguna ');
 const {flipc,tebakangka,ptebakangka} = require('./page/game');
@@ -21,12 +21,11 @@ app.get('/tes',tes);
 app.get('/', HarusLogin,awal);
 app.get('/lobby', HarusLogin,lobby)
 app.get('/daftar', daftar );
-app.get('/flip-coin', flipc)
+app.get('/flip-coin',ceklogin, flipc)
 app.get('/tebakangka',ceklogin,tebakangka);
 //post
 app.post('/daftar', pdaftar);
 app.post('/login', plogin);
-
 app.post('/tebakangka/play', ceklogin,ptebakangka);
 
 
@@ -37,7 +36,7 @@ app.get('/logout',logout);
 
 
 
-
+app.use(error403);
 app.use(error404);
 app.use(error500);
 // Start server
