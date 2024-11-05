@@ -1,5 +1,5 @@
 
-const db = require('../setting/db');
+const db = require('../../setting/db');
 
 const awal = (req, res) => {
     res.render('rules', { username: req.session.username });

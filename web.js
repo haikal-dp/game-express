@@ -1,8 +1,8 @@
 const {express,secret,ceklogin,HarusLogin,path,app,fs} = require('./setting/modul');
-const {error404,error403,error500}  = require('./page/error');
+const {error404,error403,error500}  = require('./function/page/error');
 const db = require('./setting/db');
-const {awal,tes,logout,lobby,pdaftar,plogin,daftar} = require('./page/pengguna ');
-const {flipc,tebakangka,ptebakangka} = require('./page/game');
+const {awal,tes,logout,lobby,pdaftar,plogin,daftar} = require('./function/page/pengguna ');
+const {flipc,tebakangka,ptebakangka} = require('./function/page/game');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
