@@ -1,0 +1,24 @@
+{
+  "name": "coin",
+  "version": "1.0.0",
+  "main": "web.js",
+  "scripts": {
+    "start": "nodemon web.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "forever": "^4.0.3",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7",
+    "pm2": "^5.4.2"
+  }
+}
