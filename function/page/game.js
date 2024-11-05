@@ -1,10 +1,11 @@
 const db = require('../../setting/db');
-const username = req.session.username;
+
 const flipc = (req, res ) => {
 res.render('game/flip-coin');
 };
 
-const tebakangka = (req, res) => {
+const tebakangka = (req, res) => {const username = req.session.username;
+
     db.query('SELECT saldo FROM users WHERE username = ?', [username], (err, results) => {
         if (err) {
             console.error(err);
@@ -16,6 +17,7 @@ const tebakangka = (req, res) => {
     });
 }
 const ptebakangka =  (req, res) => {
+    const username = req.session.username;
     const guess = parseInt(req.body.guess, 10); // Tebakan pengguna
     const randomNumber = Math.floor(Math.random() * 10) + 1; // Angka acak antara 1-10
     let message = '';
